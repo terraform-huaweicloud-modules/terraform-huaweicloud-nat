@@ -60,7 +60,7 @@ No module.
 | gateway_name | The name of the public NAT gateway | `string` | `""` | Y (Unless is_gateway_create is specified as false) |
 | gateway_specification | The specification of the public NAT gateway | `string` | `""` | Y (Unless is_gateway_create is specified as false) |
 | gateway_description | The description of the public NAT gateway | `string` | `""` | N |
-| gateway_ngport_ip_address | The xxxxxxx of the public NAT gateway | `string` | `""` | N |
+| gateway_ngport_ip_address | The IP address used for the NG port of the NAT gateway | `string` | `""` | N |
 | gateway_tags | The key/value pairs to associate with the public NAT gateway | <pre>map(string)</pre> | <pre>{}</pre> | N |
 | gateway_charging_mode | The charging mode of the public NAT gateway | `string` | `""` | N |
 | gateway_period_unit | The charging period unit of the public NAT gateway | `string` | `""` | N |
