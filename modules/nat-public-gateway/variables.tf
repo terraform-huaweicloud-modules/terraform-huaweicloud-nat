@@ -102,17 +102,17 @@ variable "dnat_rules_configuration" {
   description = "The configuration for the DNAT rule resources to which the public NAT gateway belongs"
 
   type = list(object({
-    dnat_rule_gateway_id                  = optional(string, "")
-    dnat_rule_eip_id                      = optional(string, "")
-    dnat_rule_global_eip_id               = optional(string, "")
-    dnat_rule_protocol                    = optional(string, "")
-    dnat_rule_internal_service_port       = optional(number, null)
-    dnat_rule_external_service_port       = optional(number, null)
-    dnat_rule_internal_service_port_range = optional(string, "")
-    dnat_rule_external_service_port_range = optional(string, "")
-    dnat_rule_port_id                     = optional(string, "")
-    dnat_rule_private_ip                  = optional(string, "")
-    dnat_rule_description                 = optional(string, "")
+    gateway_id                  = optional(string, "")
+    eip_id                      = optional(string, "")
+    global_eip_id               = optional(string, "")
+    protocol                    = optional(string, "")
+    internal_service_port       = optional(number, null)
+    external_service_port       = optional(number, null)
+    internal_service_port_range = optional(string, "")
+    external_service_port_range = optional(string, "")
+    port_id                     = optional(string, "")
+    private_ip                  = optional(string, "")
+    description                 = optional(string, "")
   }))
   default  = []
   nullable = false
@@ -122,13 +122,13 @@ variable "snat_rules_configuration" {
   description = "The configuration for the SNAT rule resources to which the public NAT gateway belongs"
 
   type = list(object({
-    snat_rule_gateway_id    = optional(string, "")
-    snat_rule_eip_id        = optional(string, "")
-    snat_rule_global_eip_id = optional(string, "")
-    snat_rule_subnet_id     = optional(string, "")
-    snat_rule_cidr          = optional(string, "")
-    snat_rule_source_type   = optional(number, null)
-    snat_rule_description   = optional(string, "")
+    gateway_id    = optional(string, "")
+    eip_id        = optional(string, "")
+    global_eip_id = optional(string, "")
+    subnet_id     = optional(string, "")
+    cidr          = optional(string, "")
+    source_type   = optional(number, null)
+    description   = optional(string, "")
   }))
   default  = []
   nullable = false
