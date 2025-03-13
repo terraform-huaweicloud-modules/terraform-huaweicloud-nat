@@ -57,7 +57,7 @@ variable "gateway_description" {
 }
 
 variable "gateway_ngport_ip_address" {
-  description = "The xxxxxxx of the public NAT gateway"
+  description = "The IP address used for the NG port of the NAT gateway"
 
   type    = string
   default = ""

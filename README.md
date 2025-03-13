@@ -12,8 +12,8 @@ declaration in the `source` of the script.
 
 ```hcl
 # Use the latest version.
-module "nat_gateway" {
-  source = "github.com/terraform-huaweicloud-modules/terraform-huaweicloud-nat/modules/nat-gateway"
+module "nat_public_gateway" {
+  source = "github.com/terraform-huaweicloud-modules/terraform-huaweicloud-nat/modules/nat-public-gateway"
 
   ...
 }
