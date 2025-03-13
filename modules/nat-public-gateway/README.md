@@ -4,21 +4,43 @@ Manages the public NAT gateway resource.
 
 ## Notes
 
+### How to import resources in the module structure
+
 If you want to manage an existing public NAT gateway using Terraform (otherwise why are you reading this?) you need to
-import this resource like this:
+make sure that the corresponding module script has been defined in your `.tf` file, like this:
+
+```hcl
+# Manages a public NAT gateway.
+module "nat_public_gateway" {
+  source = "github.com/terraform-huaweicloud-modules/terraform-huaweicloud-nat/modules/nat-public-gateway"
+
+  ...
+}
+```
+
+Then, execute the following command to import the corresponding resource into the management of the `.tfstate` file.
 
 ```bash
-$ terraform import module.nat-gateway.huaweicloud_nat_gateway.this[0] "gateway_id"
+$ terraform import module.nat_public_gateway.huaweicloud_nat_gateway.this[0] "gateway_id"
 
-module.nat-gateway.huaweicloud_nat_gateway.this[0]: Importing from ID "gateway_id"...
-module.nat-gateway.huaweicloud_nat_gateway.this[0]: Import complete!
+module.nat_public_gateway.huaweicloud_nat_gateway.this[0]: Importing from ID "gateway_id"...
+module.nat_public_gateway.huaweicloud_nat_gateway.this[0]: Import complete!
   Imported huaweicloud_nat_gateway (ID: gateway_id)
-module.nat-gateway.huaweicloud_nat_gateway.this[0]: Refreshing state... (ID: gateway_id)
+module.nat_public_gateway.huaweicloud_nat_gateway.this[0]: Refreshing state... (ID: gateway_id)
 
 Import successful!
 ```
 
+### What should we do before deploy this module example
+
 Before manage NAT resources, the access key (AK, the corresponding environment name is `HW_ACCESS_KEY`) and the secret key (SK, the corresponding environment name is `HW_SECRET_KEY`) should be configured.
+
+For the linux VM, you can configure the corresponding environment variables with the following commands:
+
+```bash
+$ export HW_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXX
+$ export HW_SECRET_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
 
 Refer to this [document](https://support.huaweicloud.com/intl/en-us/devg-apisign/api-sign-provide-aksk.html) for AK/SK information obtain.
 
