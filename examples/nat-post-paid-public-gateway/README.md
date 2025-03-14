@@ -1,4 +1,4 @@
-# Public NAT gateway example
+# Public NAT gateway
 
 Configuration in this directory creates a small type public NAT gateway.
 
