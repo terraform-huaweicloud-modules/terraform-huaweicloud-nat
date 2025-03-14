@@ -11,6 +11,20 @@
 			"dhcp_enabled": false
 		}
 	],
+	"eip_publicip_configuration": [
+        {
+			"type": "5_bgp",
+			"ip_version": "4"
+		}
+	],
+	"eip_bandwidth_configuration": [
+		{
+			"share_type": "PER",
+			"name": "EIP-Bandwidth-Test",
+			"size": 5
+		}
+	],
+	"eip_name": "EIP-IPv4-PublicIP-Test",
 	"gateway_name": "NAT-GW-Test",
 	"gateway_specification": "1"
 }
