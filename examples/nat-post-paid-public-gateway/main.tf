@@ -19,7 +19,7 @@ module "nat_network" {
 }
 
 module "nat_gateway" {
-  source = "../../modules/public-gateway"
+  source = "../../modules/nat-public-gateway"
 
   enterprise_project_id = var.enterprise_project_id
 
