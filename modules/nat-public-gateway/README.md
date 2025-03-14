@@ -88,8 +88,8 @@ No module.
 | gateway_period_unit | The charging period unit of the public NAT gateway | `string` | `""` | N |
 | gateway_period | The charging period number of the public NAT gateway | `string` | `""` | N |
 | gateway_auto_renew | Whether auto-renew function of the public NAT gateway is enabled | `bool` | `null` | N |
-| dnat_rules_configuration | The configuration for the DNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id                  = optional(string, "")<br>  eip_id                      = optional(string, "")<br>  global_eip_id               = optional(string, "")<br>  protocol                    = optional(string, "")<br>  internal_service_port       = optional(number, null)<br>  external_service_port       = optional(number, null)<br>  internal_service_port_range = optional(string, "")<br>  external_service_port_range = optional(string, "")<br>  port_id                     = optional(string, "")<br>  private_ip                  = optional(string, "")<br>  description                 = optional(string, "")<br>}))</pre> | <pre>[]</pre> |
-| snat_rules_configuration | The configuration for the SNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id    = optional(string, "")<br>  eip_id        = optional(string, "")<br>  global_eip_id = optional(string, "")<br>  subnet_id     = optional(string, "")<br>  cidr          = optional(string, "")<br>  source_type   = optional(number, null)<br>  description   = optional(string, "")<br>}))</pre> | <pre>[]</pre> | N |
+| dnat_rules_configuration | The configuration for the DNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id                  = optional(string, "")<br>  floating_ip_id              = optional(string, "")<br>  global_eip_id               = optional(string, "")<br>  protocol                    = optional(string, "")<br>  internal_service_port       = optional(number, null)<br>  external_service_port       = optional(number, null)<br>  internal_service_port_range = optional(string, "")<br>  external_service_port_range = optional(string, "")<br>  port_id                     = optional(string, "")<br>  private_ip                  = optional(string, "")<br>  description                 = optional(string, "")<br>}))</pre> | <pre>[]</pre> |
+| snat_rules_configuration | The configuration for the SNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id     = optional(string, "")<br>  floating_ip_id = optional(string, "")<br>  global_eip_id  = optional(string, "")<br>  subnet_id      = optional(string, "")<br>  cidr           = optional(string, "")<br>  source_type    = optional(number, null)<br>  description    = optional(string, "")<br>}))</pre> | <pre>[]</pre> | N |
 <!-- markdownlint-enable MD013 -->
 
 ## Outputs
@@ -97,3 +97,5 @@ No module.
 | Name | Description |
 |------|-------------|
 | gateway_id | The ID of the public NAT gateway |
+| dnat_rules_configuration | The basic configuration list of the DNAT rules |
+| snat_rules_configuration | The basic configuration list of the SNAT rules |

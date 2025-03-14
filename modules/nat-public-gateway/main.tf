@@ -41,8 +41,8 @@ resource "huaweicloud_nat_dnat_rule" "this" {
 
   nat_gateway_id              = lookup(element(var.dnat_rules_configuration, count.index), "gateway_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
     count.index), "gateway_id") : var.is_gateway_create ? huaweicloud_nat_gateway.this[0].id : ""
-  floating_ip_id              = lookup(element(var.dnat_rules_configuration, count.index), "eip_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
-    count.index), "eip_id") : null
+  floating_ip_id              = lookup(element(var.dnat_rules_configuration, count.index), "floating_ip_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
+    count.index), "floating_ip_id") : null
   global_eip_id               = lookup(element(var.dnat_rules_configuration, count.index), "global_eip_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
     count.index), "global_eip_id") : null
   protocol                    = lookup(element(var.dnat_rules_configuration, count.index), "protocol", "") != "" ? lookup(element(var.dnat_rules_configuration,
@@ -64,17 +64,17 @@ resource "huaweicloud_nat_dnat_rule" "this" {
 resource "huaweicloud_nat_snat_rule" "this" {
   count = length(var.snat_rules_configuration)
 
-  nat_gateway_id = lookup(element(var.snat_rules_configuration, count.index), "gateway_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
+  nat_gateway_id = lookup(element(var.snat_rules_configuration, count.index), "gateway_id", "") != "" ? lookup(element(var.snat_rules_configuration,
     count.index), "gateway_id") : var.is_gateway_create ? huaweicloud_nat_gateway.this[0].id : ""
-  floating_ip_id = lookup(element(var.snat_rules_configuration, count.index), "eip_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
-    count.index), "eip_id") : null
-  global_eip_id  = lookup(element(var.snat_rules_configuration, count.index), "global_eip_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
+  floating_ip_id = lookup(element(var.snat_rules_configuration, count.index), "floating_ip_id", "") != "" ? lookup(element(var.snat_rules_configuration,
+    count.index), "floating_ip_id") : null
+  global_eip_id  = lookup(element(var.snat_rules_configuration, count.index), "global_eip_id", "") != "" ? lookup(element(var.snat_rules_configuration,
     count.index), "global_eip_id") : null
-  subnet_id      = lookup(element(var.snat_rules_configuration, count.index), "subnet_id", "") != "" ? lookup(element(var.dnat_rules_configuration,
+  subnet_id      = lookup(element(var.snat_rules_configuration, count.index), "subnet_id", "") != "" ? lookup(element(var.snat_rules_configuration,
     count.index), "subnet_id") : null
-  cidr           = lookup(element(var.snat_rules_configuration, count.index), "cidr", "") != "" ? lookup(element(var.dnat_rules_configuration,
+  cidr           = lookup(element(var.snat_rules_configuration, count.index), "cidr", "") != "" ? lookup(element(var.snat_rules_configuration,
     count.index), "cidr") : null
   source_type    = lookup(element(var.snat_rules_configuration, count.index), "source_type", null)
-  description    = lookup(element(var.snat_rules_configuration, count.index), "description", "") != "" ? lookup(element(var.dnat_rules_configuration,
+  description    = lookup(element(var.snat_rules_configuration, count.index), "description", "") != "" ? lookup(element(var.snat_rules_configuration,
     count.index), "description") : null
 }

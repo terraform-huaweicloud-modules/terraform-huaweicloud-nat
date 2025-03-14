@@ -103,7 +103,7 @@ variable "dnat_rules_configuration" {
 
   type = list(object({
     gateway_id                  = optional(string, "")
-    eip_id                      = optional(string, "")
+    floating_ip_id              = optional(string, "")
     global_eip_id               = optional(string, "")
     protocol                    = optional(string, "")
     internal_service_port       = optional(number, null)
@@ -122,13 +122,13 @@ variable "snat_rules_configuration" {
   description = "The configuration for the SNAT rule resources to which the public NAT gateway belongs"
 
   type = list(object({
-    gateway_id    = optional(string, "")
-    eip_id        = optional(string, "")
-    global_eip_id = optional(string, "")
-    subnet_id     = optional(string, "")
-    cidr          = optional(string, "")
-    source_type   = optional(number, null)
-    description   = optional(string, "")
+    gateway_id     = optional(string, "")
+    floating_ip_id = optional(string, "")
+    global_eip_id  = optional(string, "")
+    subnet_id      = optional(string, "")
+    cidr           = optional(string, "")
+    source_type    = optional(number, null)
+    description    = optional(string, "")
   }))
   default  = []
   nullable = false
