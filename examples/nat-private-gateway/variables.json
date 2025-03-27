@@ -1,0 +1,16 @@
+{
+  "region_name": "cn-north-4",
+  "enterprise_project_id": "0",
+  "vpc_name": "VPC-Test",
+  "vpc_cidr": "192.168.0.0/24",
+  "subnets_configuration": [
+    {
+      "name": "VPC-Subnet-Test",
+      "cidr": "192.168.0.0/24",
+      "ipv6_enabled": false,
+      "dhcp_enabled": false
+    }
+  ],
+  "private_gateway_name": "NAT-Private-Gateway-Test",
+  "private_gateway_specification": "Small"
+}

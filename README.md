@@ -18,6 +18,14 @@ module "nat_public_gateway" {
   ...
 }
 ```
+```hcl
+# Use the latest version.
+module "nat_private_gateway" {
+  source = "github.com/terraform-huaweicloud-modules/terraform-huaweicloud-nat/modules/nat-private-gateway"
+
+  ...
+}
+```
 
 ## Contributing
 
