@@ -52,7 +52,7 @@ Refer to this [document](https://support.huaweicloud.com/intl/en-us/devg-apisign
 Report issues/questions/feature requests in the [issues](https://github.com/terraform-huaweicloud-modules/terraform-huaweicloud-nat/issues/new)
 section.
 
-Full contributing [guidelines are covered here](../../github/how_to_contribute.md).
+Full contributing [guidelines are covered here](../../.github/how_to_contribute.md).
 
 ## Requirements
 

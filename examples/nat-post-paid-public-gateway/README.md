@@ -27,7 +27,7 @@ Run `terraform destroy -var-file=variables.json` when you don't need these resou
 | Name | Source | Version |
 |------|--------|---------|
 | vpc_network | [terraform-huaweicloud-vpc](https://github.com/terraform-huaweicloud-modules/terraform-huaweicloud-vpc) | v1.2.0 |
-| nat_gateway | [../../modules/nat-gateway](../../modules/nat-gateway/README.md) | N/A |
+| nat_gateway | [../../modules/nat-public-gateway](../../modules/nat-public-gateway/README.md) | N/A |
 <!-- markdownlint-enable MD013 -->
 
 ## Resources
@@ -45,7 +45,7 @@ Run `terraform destroy -var-file=variables.json` when you don't need these resou
 | enterprise_project_id | Used to specify whether the resource is created under the enterprise project (this parameter is only valid for enterprise users) | `"0"` |
 | vpc_name | The name of the VPC resource | `"VPC-Test"` |
 | vpc_cidr | The CIDR block of the VPC resource | `"172.16.0.0/24"` |
-| subnets_configuration | The configuration for the subnet resources to which the VPC belongs | <pre>[<br>  {<br>    "name": "VPC-Subnet-Test",<br>    "cidr": "172.16.0.0/24",<br>    "ipv6_enabled": false,<br>    "dhcp_enabled": false<br>  }<br>]</pre> |
+| subnets_configuration | The configuration for the subnet resources to which the VPC belongs | <pre>[<br>  {<br>    name: "VPC-Subnet-Test",<br>    cidr: "172.16.0.0/24",<br>    ipv6_enabled: false,<br>    dhcp_enabled: false<br>  }<br>]</pre> |
 | gateway_name | The name of the public NAT gateway | `"NAT-GW-Test"` |
 | gateway_specification | The specification of the public NAT gateway | `"1"` |
 <!-- markdownlint-enable MD013 -->

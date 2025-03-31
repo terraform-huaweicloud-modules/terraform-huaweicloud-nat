@@ -29,6 +29,9 @@ module.nat_public_gateway.huaweicloud_nat_gateway.this[0]: Import complete!
 module.nat_public_gateway.huaweicloud_nat_gateway.this[0]: Refreshing state... (ID: gateway_id)
 
 Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
 ```
 
 ### What should we do before deploy this module example
@@ -49,7 +52,7 @@ Refer to this [document](https://support.huaweicloud.com/intl/en-us/devg-apisign
 Report issues/questions/feature requests in the [issues](https://github.com/terraform-huaweicloud-modules/terraform-huaweicloud-nat/issues/new)
 section.
 
-Full contributing [guidelines are covered here](../../github/how_to_contribute.md).
+Full contributing [guidelines are covered here](../../.github/how_to_contribute.md).
 
 ## Requirements
 
@@ -88,7 +91,7 @@ No module.
 | gateway_period_unit | The charging period unit of the public NAT gateway | `string` | `""` | N |
 | gateway_period | The charging period number of the public NAT gateway | `string` | `""` | N |
 | gateway_auto_renew | Whether auto-renew function of the public NAT gateway is enabled | `bool` | `null` | N |
-| dnat_rules_configuration | The configuration for the DNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id                  = optional(string, "")<br>  floating_ip_id              = optional(string, "")<br>  global_eip_id               = optional(string, "")<br>  protocol                    = optional(string, "")<br>  internal_service_port       = optional(number, null)<br>  external_service_port       = optional(number, null)<br>  internal_service_port_range = optional(string, "")<br>  external_service_port_range = optional(string, "")<br>  port_id                     = optional(string, "")<br>  private_ip                  = optional(string, "")<br>  description                 = optional(string, "")<br>}))</pre> | <pre>[]</pre> |
+| dnat_rules_configuration | The configuration for the DNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id                  = optional(string, "")<br>  floating_ip_id              = optional(string, "")<br>  global_eip_id               = optional(string, "")<br>  protocol                    = optional(string, "")<br>  internal_service_port       = optional(number, null)<br>  external_service_port       = optional(number, null)<br>  internal_service_port_range = optional(string, "")<br>  external_service_port_range = optional(string, "")<br>  port_id                     = optional(string, "")<br>  private_ip                  = optional(string, "")<br>  description                 = optional(string, "")<br>}))</pre> | <pre>[]</pre> | N |
 | snat_rules_configuration | The configuration for the SNAT rule resources to which the public NAT gateway belongs | <pre>list(object({<br>  gateway_id     = optional(string, "")<br>  floating_ip_id = optional(string, "")<br>  global_eip_id  = optional(string, "")<br>  subnet_id      = optional(string, "")<br>  cidr           = optional(string, "")<br>  source_type    = optional(number, null)<br>  description    = optional(string, "")<br>}))</pre> | <pre>[]</pre> | N |
 <!-- markdownlint-enable MD013 -->
 
