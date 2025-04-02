@@ -45,7 +45,7 @@ Run `terraform destroy -var-file=variables.json` when you don't need these resou
 | enterprise_project_id | Used to specify whether the resource is created under the enterprise project (this parameter is only valid for enterprise users) | `"0"` |
 | vpc_name | The name of the VPC resource | `"VPC-Test"` |
 | vpc_cidr | The CIDR block of the VPC resource | `"192.168.0.0/24"` |
-| subnets_configuration | The configuration for the subnet resources to which the VPC belongs | <pre>[<br>  {<br>    "name": "VPC-Subnet-Test",<br>    "cidr": "192.168.0.0/24",<br>    "ipv6_enabled": false,<br>    "dhcp_enabled": false<br>  }<br>]</pre> |
+| subnets_configuration | The configuration for the subnet resources to which the VPC belongs | <pre>[<br>  {<br>    name: "VPC-Subnet-Test",<br>    cidr: "192.168.0.0/24",<br>    ipv6_enabled: false,<br>    dhcp_enabled: false<br>  }<br>]</pre> |
 | private_gateway_name | The name of the private NAT gateway | `"NAT-Private-Gateway-Test"` |
 | private_gateway_specification | The specification of the public NAT gateway | `"Small"` |
 <!-- markdownlint-enable MD013 -->
