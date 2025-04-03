@@ -1,0 +1,48 @@
+{
+  "region_name": "cn-north-4",
+  "enterprise_project_id": "0",
+  "vpc_network_configurations": [
+    {
+      "vpc_name": "VPC-Test",
+      "vpc_cidr": "192.168.0.0/16",
+      "subnets_configuration": [
+        {
+          "name": "Subnet-Test",
+          "cidr": "192.168.0.0/24"
+        }
+      ]
+    },
+    {
+      "vpc_name": "VPC-Transit-IP-Used",
+      "vpc_cidr": "172.16.0.0/16",
+      "subnets_configuration": [
+        {
+          "name": "Subnet-Transit-IP-Used",
+          "cidr": "172.16.0.0/24"
+        }
+      ]
+    }
+  ],
+  "security_group_name": "Security-Group-Test",
+  "instance_flavor_cpu_core_count": 4,
+  "instance_flavor_memory_size": 8,
+  "instance_image_os_type": "CentOS",
+  "instance_image_architecture": "x86",
+  "instance_name": "ECS-Test",
+  "instance_disks_configuration": [
+    {
+      "is_system_disk": true,
+      "type": "SSD",
+      "size": 40
+    }
+  ],
+  "private_gateway_name": "Private-Gateway-Test",
+  "private_gateway_specification": "Small",
+  "private_dnat_rules_configuration": [
+    {
+      "protocol": "tcp",
+      "internal_service_port": 8088,
+      "transit_service_port": 8080
+    }
+  ]
+}
